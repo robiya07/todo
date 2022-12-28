@@ -1,0 +1,14 @@
+{% extends 'apps/main.html' %}
+{% block content %}
+    <div class="header-bar">
+        <h1>Login</h1>
+    </div>
+    <div class="card-body">
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="button" type="submit" value="Login" style="color: #6fa9eb">
+        </form>
+    <p>Don't have an account?  <a href="{% url 'register' %}" style="color: #db2626">Register</a></p>
+    </div>
+{% endblock content %}
